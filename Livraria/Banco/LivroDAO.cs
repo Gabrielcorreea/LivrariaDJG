@@ -102,9 +102,7 @@ namespace Livraria.Banco
         {
             string comando;
                  
-            comando = "UPDATE livros SET isbn = @isbn, nome_livro = @nome_livro, id_autor = @id_autor," +
-            "id_categoria = @id_categoria, " +
-            "id_editora = @id_editora" + " WHERE id = @id";
+            comando = "UPDATE livros SET isbn = @isbn, nome_livro = @nome_livro, id_autor = @id_autor, id_categoria = @id_categoria, id_editora = @id_editora" + " WHERE id = @id";
                              
             ConexaoBD conexaoBD = new ConexaoBD();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -121,24 +119,26 @@ namespace Livraria.Banco
             cmd.Parameters.AddWithValue("@id_editora", l.Id_Editora);
 
             cmd.Prepare();
+            if (cmd.ExecuteNonQuery() == 0)
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+            else
+            {
+                conexaoBD.Desconectar(con);
+                return true;
+            }
+            /*
             try
             {
-                if (cmd.ExecuteNonQuery() == 0)
-                {
-                    conexaoBD.Desconectar(con);
-                    return false;
-                }
-                else
-                {
-                    conexaoBD.Desconectar(con);
-                    return true;
-                }
+               
             }
             catch
             {
                 return false;
             }
-
+            */
 
         }
     }

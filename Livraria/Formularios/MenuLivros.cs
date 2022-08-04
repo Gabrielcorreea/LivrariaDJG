@@ -72,7 +72,7 @@ namespace Livraria.Formularios
             l.Id_Categoria = obterIDdaString(cmbCategoriaCad.Text);
             l.Id_Autor = obterIDdaString(cmbAutorCad.Text);
             l.Id_Editora = obterIDdaString(cmbEditoraCad.Text);
-            l.Isbn = int.Parse(txtISBNcad.Text);
+            l.Isbn = txtISBNcad.Text;
             // Chamar o cadastrar:
             if (Banco.LivroDAO.Cadastrar(l) == true)
             {
@@ -101,6 +101,7 @@ namespace Livraria.Formularios
 
             // Ativar o groupBox de Editar:
             grbEditar.Enabled = true;
+            grbRemover.Enabled = true;
 
             // Descobrir o número da linha da célula clicada:
             int numeroLinha = dgvLivros.CurrentCell.RowIndex;
@@ -109,18 +110,22 @@ namespace Livraria.Formularios
             var linha = dgvLivros.Rows[numeroLinha];
 
             // Atribuir os valores das células aos txt do Editar:
-            txtLivroEdi.Text = linha.Cells[0].Value.ToString();
-            cmbCategoriaEdi.Text = linha.Cells[1].Value.ToString();
-            cmbEditoraEdi.Text = linha.Cells[2].Value.ToString();
-            cmbAutorEdi.Text = linha.Cells[3].Value.ToString();
+            _idSelecionado = int.Parse(linha.Cells[0].Value.ToString());
+            txtLivroEdi.Text = linha.Cells[1].Value.ToString();
+            cmbCategoriaEdi.Text = linha.Cells[3].Value.ToString();
+            cmbEditoraEdi.Text = linha.Cells[4].Value.ToString();
+            cmbAutorEdi.Text = linha.Cells[5].Value.ToString();
+            txtISBNedi.Text = linha.Cells[2].Value.ToString();
+            lblRemover.Text = linha.Cells[1].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Instanciando:
             var l = new Livro();
+            l.Id = _idSelecionado;
             l.Nome_Livro = txtLivroEdi.Text;
-            l.Isbn = int.Parse(txtISBNedi.Text);
+            l.Isbn = txtISBNedi.Text;
             l.Id_Categoria = obterIDdaString(cmbCategoriaEdi.Text);
             l.Id_Autor = obterIDdaString(cmbAutorEdi.Text);
             l.Id_Editora = obterIDdaString(cmbEditoraEdi.Text);
@@ -150,7 +155,8 @@ namespace Livraria.Formularios
         private void btnRemover_Click(object sender, EventArgs e)
         {
             // Confirmar remoção:
-            var r = MessageBox.Show("Você deseja remover este usuário?",
+            
+            var r = MessageBox.Show("Você deseja remover este livro?",
             "ATENÇÃO!!", MessageBoxButtons.YesNo);
 
             if (r == DialogResult.Yes)
@@ -159,8 +165,6 @@ namespace Livraria.Formularios
 
             }
 
-            // Limar lblRemover:
-            lblRemover.Text = "";
             grbRemover.Enabled = false;
             // Desabilitar EDITAR:
             grbEditar.Enabled = false;
@@ -180,6 +184,16 @@ namespace Livraria.Formularios
         }
 
         private void cmbAutorCad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRemover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbRemover_Enter(object sender, EventArgs e)
         {
 
         }

@@ -9,7 +9,7 @@ namespace Livraria
     public class Livro
     {
         public int Id { get; set; }
-        public int Isbn { get; set; }
+        public string Isbn { get; set; }
         public string Nome_Livro { get; set;}
         public int Id_Autor { get; set;}
         public int Id_Categoria { get; set; }

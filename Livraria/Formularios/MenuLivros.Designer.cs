@@ -69,9 +69,9 @@
             this.dgvLivros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLivros.Location = new System.Drawing.Point(483, 12);
             this.dgvLivros.Name = "dgvLivros";
-            this.dgvLivros.Size = new System.Drawing.Size(551, 677);
+            this.dgvLivros.Size = new System.Drawing.Size(551, 603);
             this.dgvLivros.TabIndex = 0;
-            this.dgvLivros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivros_CellContentClick);
+            this.dgvLivros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivros_CellContentClick);
             // 
             // lblRemover
             // 
@@ -84,6 +84,7 @@
             this.lblRemover.Size = new System.Drawing.Size(211, 27);
             this.lblRemover.TabIndex = 1;
             this.lblRemover.Text = "Selecione um livro:";
+            this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
             // grbRemover
             // 
@@ -94,10 +95,11 @@
             this.grbRemover.ForeColor = System.Drawing.Color.White;
             this.grbRemover.Location = new System.Drawing.Point(12, 621);
             this.grbRemover.Name = "grbRemover";
-            this.grbRemover.Size = new System.Drawing.Size(465, 68);
+            this.grbRemover.Size = new System.Drawing.Size(1022, 68);
             this.grbRemover.TabIndex = 2;
             this.grbRemover.TabStop = false;
             this.grbRemover.Text = "Remover:";
+            this.grbRemover.Enter += new System.EventHandler(this.grbRemover_Enter);
             // 
             // btnRemover
             // 
@@ -105,9 +107,9 @@
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemover.Font = new System.Drawing.Font("News706 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.ForeColor = System.Drawing.Color.White;
-            this.btnRemover.Location = new System.Drawing.Point(265, 19);
+            this.btnRemover.Location = new System.Drawing.Point(590, 20);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(194, 41);
+            this.btnRemover.Size = new System.Drawing.Size(330, 41);
             this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "REMOVER";
             this.btnRemover.UseVisualStyleBackColor = false;
@@ -332,9 +334,9 @@
             this.lblSBNedi.Font = new System.Drawing.Font("News706 BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSBNedi.Location = new System.Drawing.Point(20, 152);
             this.lblSBNedi.Name = "lblSBNedi";
-            this.lblSBNedi.Size = new System.Drawing.Size(119, 24);
+            this.lblSBNedi.Size = new System.Drawing.Size(67, 24);
             this.lblSBNedi.TabIndex = 15;
-            this.lblSBNedi.Text = "Novo ISBN:";
+            this.lblSBNedi.Text = "ISBN:";
             // 
             // lblAutorEdi
             // 
@@ -376,6 +378,7 @@
             // 
             // txtISBNedi
             // 
+            this.txtISBNedi.Enabled = false;
             this.txtISBNedi.Font = new System.Drawing.Font("News706 BT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtISBNedi.Location = new System.Drawing.Point(233, 143);
             this.txtISBNedi.Name = "txtISBNedi";

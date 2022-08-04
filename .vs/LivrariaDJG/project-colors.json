@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "409d0f4c-a372-478e-b179-fa408f013a17": {
+      "ProjectGuid": "409d0f4c-a372-478e-b179-fa408f013a17",
+      "DisplayName": "LivrariaDJG",
+      "ColorIndex": 0
+    },
+    "2b8fdd18-09d7-408e-a5af-c52d1b836ee9": {
+      "ProjectGuid": "2b8fdd18-09d7-408e-a5af-c52d1b836ee9",
+      "DisplayName": "Livraria",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

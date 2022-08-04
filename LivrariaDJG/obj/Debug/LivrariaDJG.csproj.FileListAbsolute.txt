@@ -1,0 +1,7 @@
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\obj\Debug\LivrariaDJG.csproj.CoreCompileInputs.cache
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\bin\Debug\LivrariaDJG.dll.config
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\bin\Debug\LivrariaDJG.dll
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\bin\Debug\LivrariaDJG.pdb
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\obj\Debug\LivrariaDJG.csproj.AssemblyReference.cache
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\obj\Debug\LivrariaDJG.dll
+C:\Users\gabriel.acorrea1\source\repos\LivrariaDJG\LivrariaDJG\obj\Debug\LivrariaDJG.pdb
